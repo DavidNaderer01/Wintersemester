@@ -45,6 +45,10 @@ input:checked ~ header {
     left: 4%;
 }
 
+input:checked ~ .sidebar ul {
+    display: none;
+}
+
 article {
     transition: left, width var(--duration);
     z-index: 1;
@@ -82,7 +86,7 @@ header h1 {
 .sidebar ul::before, .sidebar ul::after {
     content: '';
     display: flex;
-    border-bottom: 3px black dotted;
+    border-bottom: 3px black dashed;
 }
 
 .sidebar ul {
@@ -91,8 +95,16 @@ header h1 {
     position: absolute;
     top: 7%;
     left: 0;
+    width: 80%;
+    text-align: center;
 }
 
 .sidebar ul li {
     padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: 1.2rem;
 }
