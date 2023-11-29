@@ -1,3 +1,5 @@
+@import "animation.css";
+
 :root {
     --menu-background: #A789E0;
     --duration: 0.7s;
@@ -6,6 +8,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 18%;
 }
 
 * {
@@ -15,7 +18,8 @@ html {
 
 body {
     background: linear-gradient(50deg, #eae1ff, #d1dfff, #b2b2ff);
-    background-size: 120% 120%;
+    background-size: 400% 400%;
+    animation: alternate Gradient 4s infinite;
 }
 
 .sidebar {
@@ -64,6 +68,7 @@ article {
     left: 20%;
     width: 80%;
     height: 80%;
+    padding-bottom: 20%;
 }
 
 label {
@@ -155,4 +160,38 @@ section:hover {
     background-color: #596C99;
     padding: 0.4rem;
     color: white;
+}
+
+img {
+    width: 20%;
+    height: 20%;
+    float: right;
+    padding-right: 2rem;
+}
+
+section table tr th, section table tr td {
+    border: 3px black solid;
+    text-align: left;
+}
+
+section table {
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+section table tr th:hover, section table tr td:hover {
+    background-color: #C4BFFF;
+}
+
+.tables {
+    display: flex;
+    gap: 1rem;
+}
+
+.biggerImage {
+    width: 35%;
+    height: 35%;
+    position: relative;
+    top: -2rem;
 }

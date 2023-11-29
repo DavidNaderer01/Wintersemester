@@ -30,6 +30,7 @@
         </section>
         <section>
             <h2 id="dotnet">.Net Framework</h2>
+            <img src="Dotnet.png" alt=".Net logo">
             <p>
                 <span>.NET is a free, cross-platform, open source developer platform that allows you to use </span>
             </p>
@@ -110,6 +111,7 @@
         <section>
             <h2 id="operators">Operators</h2>
             <h3>Arithmetic Operands</h3>
+            <img src="math.png" alt="mathematical form" class="biggerImage">
             <ul>
                 <li>+
                     <ul>
@@ -198,16 +200,112 @@
                 <li><code>&lt;</code>
                     <ul>
                         <li>smaller then</li>
-                        <li>the symbol checks if the left value is smaller than the right. If the left value is smaller, it returns true. Otherwise, it returns false.</li>
+                        <li>The symbol checks if the left value is smaller than the right. If the left value is smaller, it returns true. Otherwise, it returns false. When you add an equals, it also checks if it is the same value.</li>
                     </ul>
                 </li>
                 <li><code>&#62;</code>
                     <ul>
                         <li>bigger then</li>
-                        <li>the symbol checks if the left value is bigger than the right. if the left value is bigger, it returns true. Otherwise, it returns false.</li>
+                        <li>The symbol checks if the left value is bigger than the right. if the left value is bigger, it returns true. Otherwise, it returns false. When you add an equals, it also checks if it is the same value.</li>
                     </ul>
                 </li>
             </ul>
+            <p>
+                <span>A statement can be saved with a variable. The type is bool</span>
+            </p>
+            <p class="code-block">
+                <span>bool isBigger = 2 > 0; // Output: true<br></span>
+                <span>bool isBigger = 2 < 0; // Output: false<br></span>
+                <span>bool isEqualsOrBigger = 2 >= 2 // Output: true<br></span>
+                <span>bool isSmaller = 2 < 5 // Output: true<br></span>
+                <span>bool isSmaller = 2 < 1 // Output: false<br></span>
+                <span>bool isSmaller = 2 <= 2 // Output: true<br></span>
+                <span>bool orGate = true || false // Output: true<br></span>
+                <span>bool andGate = true || true // Output: true<br></span>
+                <span>bool notGate = !false // Output: true<br></span>
+            </p>
+            <div class="tables">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>left side</th>
+                            <th>right side</th>
+                            <th>output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>left side</th>
+                        <th>right side</th>
+                        <th>output</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>side</th>
+                            <th>output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </article>
 </body>

@@ -1,0 +1,14 @@
+@keyframes Gradient {
+    0% {
+        background-position: 0 25%;
+    }
+    33% {
+        background-position: 25% 50%;
+    }
+    66% {
+        background-position: 50% 75%;
+    }
+    100% {
+        background-position: 75% 100%;
+    }
+}
