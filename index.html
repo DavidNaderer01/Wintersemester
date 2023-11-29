@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>C# A - Z</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -15,10 +15,200 @@
     <div class="sidebar">
         <ul>
             <li><a href="#introductions">Introduction</a></li>
+            <li><a href="#dotnet">.Net Framework</a></li>
+            <li><a href="#variable">Variable</a></li>
+            <li><a href="#selection">Selection</a></li>
+            <li><a href="#operators">Operators</a></li>
         </ul>
     </div>
     <article>
-
+        <section>
+            <h2 id="introductions">Introduction</h2>
+            <p>
+                <span>C# is an object orientated programming language, which uses the <a href="#dotnet">.Net Framework</a> for development</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="dotnet">.Net Framework</h2>
+            <p>
+                <span>.NET is a free, cross-platform, open source developer platform that allows you to use </span>
+            </p>
+            <ul>
+                <li>Multiple languages</li>
+                <li>Editors</li>
+                <li>Libraries</li>
+            </ul>
+            <p>
+                <span>To build</span>
+            </p>
+            <ul>
+                <li>Games
+                    <ul>
+                        <li>Web</li>
+                        <li>Mobile</li>
+                        <li>Desktop</li>
+                    </ul>
+                </li>
+                <li>Servers</li>
+                <li>Windows Tools</li>
+            </ul>
+        </section>
+        <section>
+            <h2 id="variable">Variables</h2>
+            <h3>Define variables</h3>
+            <p>
+                <span> To define a variable in C# you have to write the type of the variable, then the name.<br>After that you write a equals symbol and the value. Last but not least a semicolon</span>
+            </p>
+            <p class="code-block">
+                <span>type name = value;<br></span>
+            </p>
+            <p>
+                <span>For example</span>
+            </p>
+            <p class="code-block">
+                <span>string name = "Jonas";<br></span>
+                <span>int number = 1;</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="selection">Selection</h2>
+            <p>
+                <span>Selections means to create a statement. When the statement is true, then a action executes</span>
+                <span>You can use if-statements</span>
+            </p>
+            <p class="code-block">
+                <span>if(statement)<br>{<br><code>&emsp;</code>// Action what should execute<br>}</span>
+            </p>
+            <p>
+                <span>You can also execute a specified action if the condition isn't true. The Keyword is else</span>
+            </p>
+            <p class="code-block">
+                <span>if(statement)<br>{<br><code>&emsp;</code>// Action what should execute<br>}<br>else<br>{<br><code>&emsp;</code>// Action what should execute when the statement is false<br>}</span>
+            </p>
+            <p>
+                <span>You can also specify it with another statement. The Keyword is else if</span>
+            </p>
+            <p class="code-block">
+                <span>if(statement)<br>{<br><code>&emsp;</code>// Action what should execute<br>}<br>else if(statement)<br>{<br><code>&emsp;</code>// Action what should execute when the statement is false and the second statement is true<br>}</span>
+            </p>
+            <p>
+                <span>You can also use switch. A switch checks all cases. The value should be static in the interval of the usage.<br>After each case is a break.</span>
+            </p>
+            <p class="code-block">
+                <span>switch(value)<br>{<br><code>&emsp;</code>case statement: // first case of the value compared with the statement<br><code>&emsp;</code>// Action by statement<br><code>&emsp;</code>break;<br><br></span>
+                <span><code>&emsp;</code>case statement: // second case of the value compared with the statement<br><code>&emsp;</code>// Action by statement<br><code>&emsp;</code>break;<br>}</span>
+            </p>
+            <p>
+                <span>A switch can also take a default. It is activated, when no statement is true.</span>
+            </p>
+            <p class="code-block">
+                <span>switch(value)<br>{<br><code>&emsp;</code>case statement: // first case of the value compared with the statement<br><code>&emsp;</code>// Action by statement<br><code>&emsp;</code>break;<br><br></span>
+                <span><code>&emsp;</code>case statement: // second case of the value compared with the statement<br><code>&emsp;</code>// Action by statement<br><code>&emsp;</code>break;<br><br></span>
+                <span><code>&emsp;</code>default:<br><code>&emsp;</code>// Action if no statement is true<br><code>&emsp;</code>break;<br>}</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="operators">Operators</h2>
+            <h3>Arithmetic Operands</h3>
+            <ul>
+                <li>+
+                    <ul>
+                        <li>Additions operator</li>
+                    </ul>
+                </li>
+                <li>-
+                    <ul>
+                        <li>Subtraction operator</li>
+                    </ul>
+                </li>
+                <li>*
+                    <ul>
+                        <li>Multiplication operator</li>
+                    </ul>
+                </li>
+                <li>/
+                    <ul>
+                        <li>Division operator</li>
+                    </ul>
+                </li>
+                <li>%
+                    <ul>
+                        <li>Modulo operator</li>
+                        <li>The modulo operator returns the rest of a division</li>
+                        <li>6 % 2 = 0</li>
+                        <li>6 / 2 = 3 and nothing rest</li>
+                        <li>6 % 4 = 2</li>
+                        <li>6 / 4 = 1 and 2 rest</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="code-block">
+                <span>int number = 6<br></span>
+                <span>int additionOperator = number + 2; // Output: 8<br></span>
+                <span>int subtractionOperator = number - 2; // Output: 4<br></span>
+                <span>int multiplicationOperator = number * 2; // Output: 12<br></span>
+                <span>int dividedOperator = number / 2; // Output: 12<br></span>
+                <span>int moduloOperator = number % 2; // Output: 0</span>
+            </p>
+            <h3>Assignment operator</h3>
+            <p>
+                <span>An assignment operator calculates the expression on the right side and copy it into the variable on the left side. The operator symbol is =</span>
+            </p>
+            <p class="code-block">
+                double number = 3.2;
+            </p>
+            <h3>Special assignment operator</h3>
+            <p>
+                <span>C# also have special assignment operators. The first one is when you use ++ oder --. When you write ++ or -- after a variable, it returns the value + 1 after a action. When you write ++ or -- before </span>
+            </p>
+            <p class="code-block">
+                <span>int number = 1;<br></span>
+                <span>int secondNumber = 1 + (number++); // Output: Second number is 2 and number is 2<br></span>
+                <span>int thirdNumber = 1 + (++number); // Output: Second number is 3 and number is 2<br></span>
+            </p>
+            <p>
+                <span>When you will add or subtract an individual number, you can use the arithmetic operators with an equals symbol.<br></span>
+            </p>
+            <p class="code-block">
+                <span>int a = 0;<br></span>
+                <span>a += 2 // a is 2<br></span>
+                <span>a = 0;<br></span>
+                <span>a = a + 2 // the same output<br></span>
+            </p>
+            <h3>Boolean operators</h3>
+            <ul>
+                <li>||
+                    <ul>
+                        <li>or gate</li>
+                        <li>when one of the statements are true. Then it returns true. Otherwise, it returns false.</li>
+                    </ul>
+                </li>
+                <li>&&
+                    <ul>
+                        <li>and gate</li>
+                        <li>when the right statement and left statement are true. Then it returns true. Otherwise, it returns false.</li>
+                    </ul>
+                </li>
+                <li>!
+                    <ul>
+                        <li>not gate</li>
+                        <li>statement switch from true to false</li>
+                    </ul>
+                </li>
+                <li><code>&lt;</code>
+                    <ul>
+                        <li>smaller then</li>
+                        <li>the symbol checks if the left value is smaller than the right. If the left value is smaller, it returns true. Otherwise, it returns false.</li>
+                    </ul>
+                </li>
+                <li><code>&#62;</code>
+                    <ul>
+                        <li>bigger then</li>
+                        <li>the symbol checks if the left value is bigger than the right. if the left value is bigger, it returns true. Otherwise, it returns false.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
     </article>
 </body>
 </html>

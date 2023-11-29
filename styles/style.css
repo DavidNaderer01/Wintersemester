@@ -1,6 +1,11 @@
 :root {
     --menu-background: #A789E0;
-    --duration: 0.4s;
+    --duration: 0.7s;
+    --border-radius: 5px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -10,6 +15,7 @@
 
 body {
     background: linear-gradient(50deg, #eae1ff, #d1dfff, #b2b2ff);
+    background-size: 120% 120%;
 }
 
 .sidebar {
@@ -52,12 +58,12 @@ input:checked ~ .sidebar ul {
 article {
     transition: left, width var(--duration);
     z-index: 1;
-    display: flex;
+    display: block;
     position: absolute;
-    top: 0;
+    top: 20%;
     left: 20%;
     width: 80%;
-    height: 100vh;
+    height: 80%;
 }
 
 label {
@@ -69,18 +75,25 @@ label {
     padding: 1.5rem;
 }
 
+label:hover {
+    cursor: pointer;
+}
+
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
+    z-index: 3;
+    padding-bottom: 2rem;
     left: 20%;
     width: 100%;
-    height: 5rem;
+    height: 10%;
     background-color: var(--menu-background);
     transition: width, left var(--duration);
 }
 
 header h1 {
     margin-left: 2rem;
+    margin-top: 2rem;
 }
 
 .sidebar ul::before, .sidebar ul::after {
@@ -102,9 +115,44 @@ header h1 {
 .sidebar ul li {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar ul li:hover {
+    background-color: #6B617A;
+    cursor: pointer;
+    border-radius: var(--border-radius);
 }
 
 .sidebar ul li a {
     color: white;
     font-size: 1.2rem;
+}
+
+section {
+    width: 80%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    border-radius: 5px;
+    box-shadow: rgba(159, 159, 159, 0.35) 0 0.1rem 15px;
+    transition: width var(--duration);
+}
+
+section h2 {
+    text-align: center;
+    transition: width, left var(--duration);
+}
+
+section:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0 0.1rem 15px;
+    cursor: pointer;
+}
+
+.code-block {
+    border-radius: 5px;
+    background-color: #596C99;
+    padding: 0.4rem;
+    color: white;
 }
