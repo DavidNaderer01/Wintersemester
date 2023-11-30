@@ -143,6 +143,11 @@ section {
     transition: width var(--duration);
 }
 
+section p span a:hover {
+    color: #6B617A;
+    cursor: grabbing;
+}
+
 section h2 {
     text-align: center;
     transition: width, left var(--duration);
@@ -161,8 +166,10 @@ section:hover {
 }
 
 img {
-    width: 20%;
-    height: 20%;
+    min-height: 5rem;
+    max-height: 15rem;
+    min-width: 10rem;
+    max-width: 20rem;
     float: right;
     margin-right: 2rem;
     border-radius: var(--border-radius);
@@ -186,11 +193,4 @@ section table tr th:hover, section table tr td:hover {
 .tables {
     display: flex;
     gap: 1rem;
-}
-
-.biggerImage {
-    width: 35%;
-    height: 35%;
-    position: relative;
-    top: -2rem;
 }

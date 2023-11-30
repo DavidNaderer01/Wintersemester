@@ -19,6 +19,9 @@
             <li><a href="#variable">Variable</a></li>
             <li><a href="#selection">Selection</a></li>
             <li><a href="#operators">Operators</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#types">Elementary data types</a></li>
+            <li><a href="#arrays">Arrays</a></li>
         </ul>
     </div>
     <article>
@@ -111,7 +114,7 @@
         <section>
             <h2 id="operators">Operators</h2>
             <h3>Arithmetic Operands</h3>
-            <img src="math.png" alt="mathematical form" class="biggerImage">
+            <img src="math.png" alt="mathematical form">
             <ul>
                 <li>+
                     <ul>
@@ -306,6 +309,204 @@
                     </tbody>
                 </table>
             </div>
+        </section>
+        <section>
+            <h2 id="loops">Loops</h2>
+            <p>
+                <span>A loop is a code block, which executes as long as the statement is true. There are different types of loops. You can use loops to avoid code duplicates.</span>
+            </p>
+            <ul>
+                <li>for
+                    <ul>
+                        <li>It is a counter loop</li>
+                        <li>It runs at least 0 times</li>
+                    </ul>
+                </li>
+                <li>while
+                    <ul>
+                        <li>It is a head controlled loop</li>
+                        <li>It runs at least 0 times</li>
+                    </ul>
+                </li>
+                <li>do-while
+                    <ul>
+                        <li>It is a foot controlled loop</li>
+                        <li>It runs at least 1 time</li>
+                    </ul>
+                </li>
+                <li>foreach
+                    <ul>
+                        <li>Selects each element in a sequence</li>
+                        <li>It runs at least the count of elements in the sequence</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                <span>The for loop has a counter. You can define that with a data type.</span>
+            </p>
+            <p class="code-block">
+                <span>for((type of the counter) (name of the counter); (statement for the loop);(operation with the counter))<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>// The code in the loop<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>Here is an example of a for loop</span>
+            </p>
+            <p class="code-block">
+                <span>for(int i; i < 10;i++)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>Console.WriteLine($"The number is {i}");<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>The </span>
+            </p>
+            <p class="code-block">
+                <span>while(statement)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>// The code in the loop<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>A while loop is for example</span>
+            </p>
+            <p class="code-block">
+                <span>int number = 312;<br></span>
+                <span>while(number > 9)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>number /= 10;<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>If the loop is finished, the variable number will have 3. Because it is the last digit.</span>
+            </p>
+            <p>
+                <span>The do-while runs at least one time, because the check if it should end is at the end of the loop. It is almost the same as while.</span>
+            </p>
+            <p class="code-block">
+                <span>do<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>// The code in the loop<br></span>
+                <span>}<br></span>
+                <span>while(statement);</span>
+            </p>
+            <p>
+                <span>The foreach loop iterates through a sequence of elements</span>
+            </p>
+            <p class="code-block">
+                <span>foreach(type singleElement in sequence)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>// Code in the code-block<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>For example</span>
+            </p>
+            <p class="code-block">
+                <span>string[] foodArray = { "Pizza", "Pasta", "Burger" };<br></span>
+                <span>foreach(string food in foodArray)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>Console.WriteLine(food);<br></span>
+                <span>}</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="types">Elementary data types</h2>
+            <h3>What are data types</h3>
+            <p>
+                <span>A particular kind of data item, as defined by the values it can take, the programming language used, or the operations that can be performed on it. And it is already defined.<br></span>
+                <span>Here is the list of elementary data types.</span>
+            </p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Defined</th>
+                    <th>Alias</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Integer</td>
+                    <td>Size of 4 Bytes and can take numbers inside the range</td>
+                    <td>int</td>
+                </tr>
+                <tr>
+                    <td>Double</td>
+                    <td>Floating-point number with double precision</td>
+                    <td>double</td>
+                </tr>
+                <tr>
+                    <td>Character</td>
+                    <td>Single Unicode character</td>
+                    <td>char</td>
+                </tr>
+                <tr>
+                    <td>Boolean</td>
+                    <td>Represents true or false</td>
+                    <td>bool</td>
+                </tr>
+                <tr>
+                    <td>String</td>
+                    <td>Sequence of characters</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>Byte</td>
+                    <td>Unsigned 8-bit integer</td>
+                    <td>byte</td>
+                </tr>
+                <tr>
+                    <td>Short</td>
+                    <td>Signed 16-bit integer</td>
+                    <td>short</td>
+                </tr>
+                <tr>
+                    <td>Long</td>
+                    <td>Signed 64-bit integer</td>
+                    <td>long</td>
+                </tr>
+                <tr>
+                    <td>Float</td>
+                    <td>Floating-point number with single precision</td>
+                    <td>float</td>
+                </tr>
+                <tr>
+                    <td>Unsigned Integer</td>
+                    <td>Unsigned 32-bit integer</td>
+                    <td>uint</td>
+                </tr>
+                <tr>
+                    <td>Unsigned Long</td>
+                    <td>Unsigned 64-bit integer</td>
+                    <td>ulong</td>
+                </tr>
+                <tr>
+                    <td>Unsigned Short</td>
+                    <td>Unsigned 16-bit integer</td>
+                    <td>ushort</td>
+                </tr>
+                <tr>
+                    <td>Signed Byte</td>
+                    <td>Signed 8-bit integer</td>
+                    <td>sbyte</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>
+                <span>And you can cast variables to another type. You cannot cast a higher number to a lower number. You can also cast characters, to numbers and reversed.<br>The values of the characters are in the <a href="https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html">ascii table</a> and if it is higher than 1 Byte, its number is in the <a href="https://symbl.cc/de/unicode/table/">unicode symbols</a>. Here is an example.</span>
+            </p>
+            <p class="code-block">
+                <span>int numberAsInteger = 97;<br></span>
+                <span>long numberAsLong = (long)numberAsInteger; // numberAsLong is 97<br></span>
+                <span>short numberAsShort = (short)numberAsInteger; // numberAsShort throw an error<br></span>
+                <span>char letter = (char)numberAsInteger; // letter is 'a'<br></span>
+                <span></span>
+            </p>
+        </section>
+        <section>
+            <h2 id="arrays">Arrays</h2>
         </section>
     </article>
 </body>
