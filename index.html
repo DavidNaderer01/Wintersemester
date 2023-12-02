@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <input id="open" type="checkbox" role="button">
+    <input id="open" type="checkbox" role="button" aria-pressed="true">
     <label for="open"><span class="material-symbols-outlined">menu</span></label>
     <header>
         <h1>C# A - Z</h1>
@@ -22,6 +22,19 @@
             <li><a href="#loops">Loops</a></li>
             <li><a href="#types">Elementary data types</a></li>
             <li><a href="#arrays">Arrays</a></li>
+            <li><a href="#recursion">Recursion</a></li>
+            <li><a href="#io">Input-Output System</a></li>
+            <li><a href="#file">File Input-Output System</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#property-field">Properties and fields</a></li>
+            <li><a href="#callbyreference">Call by reference</a></li>
+            <li><a href="#callbyvalue">Call by value</a></li>
+            <li><a href="#struct">Structs</a></li>
+            <li><a href="#records">Records</a></li>
+            <li><a href="#class">Classes</a></li>
+            <li><a href="#interface">Interfaces</a></li>
+            <li><a href="#constructor">Constructor</a></li>
+            <li><a href="#keywords">Keywords</a></li>
         </ul>
     </div>
     <article>
@@ -61,7 +74,7 @@
             <h2 id="variable">Variables</h2>
             <h3>Define variables</h3>
             <p>
-                <span> To define a variable in C# you have to write the type of the variable, then the name.<br>After that you write a equals symbol and the value. Last but not least a semicolon</span>
+                <span> To define a variable in C# you have to write the type of the variable, then the name.<br>After that you write an equals symbol and the value. Last but not least a semicolon</span>
             </p>
             <p class="code-block">
                 <span>type name = value;<br></span>
@@ -77,7 +90,7 @@
         <section>
             <h2 id="selection">Selection</h2>
             <p>
-                <span>Selections means to create a statement. When the statement is true, then a action executes</span>
+                <span>Selections means to create a statement. When the statement is true, then an action executes</span>
                 <span>You can use if-statements</span>
             </p>
             <p class="code-block">
@@ -164,7 +177,7 @@
             </p>
             <h3>Special assignment operator</h3>
             <p>
-                <span>C# also have special assignment operators. The first one is when you use ++ oder --. When you write ++ or -- after a variable, it returns the value + 1 after a action. When you write ++ or -- before </span>
+                <span>C# also have special assignment operators. The first one is when you use ++ oder --. When you write ++ or -- after a variable, it returns the value + 1 after an action. When you write ++ or -- before </span>
             </p>
             <p class="code-block">
                 <span>int number = 1;<br></span>
@@ -218,11 +231,11 @@
             </p>
             <p class="code-block">
                 <span>bool isBigger = 2 > 0; // Output: true<br></span>
-                <span>bool isBigger = 2 < 0; // Output: false<br></span>
+                <span>bool isBigger = 2 <code>&lt</code> 0; // Output: false<br></span>
                 <span>bool isEqualsOrBigger = 2 >= 2 // Output: true<br></span>
-                <span>bool isSmaller = 2 < 5 // Output: true<br></span>
-                <span>bool isSmaller = 2 < 1 // Output: false<br></span>
-                <span>bool isSmaller = 2 <= 2 // Output: true<br></span>
+                <span>bool isSmaller = 2 <code>&lt;</code> 5 // Output: true<br></span>
+                <span>bool isSmaller = 2 <code>&lt;</code> 1 // Output: false<br></span>
+                <span>bool isSmaller = 2 <code>&lt;</code>= 2 // Output: true<br></span>
                 <span>bool orGate = true || false // Output: true<br></span>
                 <span>bool andGate = true || true // Output: true<br></span>
                 <span>bool notGate = !false // Output: true<br></span>
@@ -354,7 +367,7 @@
                 <span>Here is an example of a for loop</span>
             </p>
             <p class="code-block">
-                <span>for(int i; i < 10;i++)<br></span>
+                <span>for(int i; i <code>&lt;</code> 10;i++)<br></span>
                 <span>{<br></span>
                 <span><code>&emsp;</code>Console.WriteLine($"The number is {i}");<br></span>
                 <span>}<br></span>
@@ -509,8 +522,462 @@
             <h2 id="arrays">Arrays</h2>
             <h3>What are arrays</h3>
             <p>
-                <span>An array is a group of similar elements or data items of the same type collected at contiguous memory locations. In simple words, we can say that in computer programming, arrays are generally used to organize the same type of data.</span>
+                <span>An array is a group of similar elements or data items of the same type collected at contiguous memory locations. The size of the array is fixed. In simple words, we can say that in computer programming, arrays are generally used to organize the same type of data.</span>
+                <span>You create an array with default values, individual values, or you can reverse it. In the example are different types.</span>
             </p>
+            <p class="code-block">
+                <span>int[] numbers = { 1, 4, 3, 1 }; // you can type in individual numbers<br></span>
+                <span>int[] numbers = new int[4] // you define it with a range<br></span>
+                <span>int[] numbers = new int[..3] // you define it with a range and reversed<br></span>
+            </p>
+            <p>
+                <span>You create an array with default values, individual values, or you can reverse it. In the example are different types.</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="recursion">Recursion</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>A recursion is, when you call the <a href="#methodes">methode</a> in itself.</span>
+            </p>
+            <p class="code-block">
+                <span>void GetLengthRecursion(int[] array, ref int count)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>if(count == array.Length)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>count++;<br></span>
+                <span><code>&emsp;</code>GetLengthRecursion(array, ref count);<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>The methode set the counter, because the counter is a reference to save the length. But when you use recursion methods, you have to check inside the method if the recursion should be stopped. Otherwise, you get a stack overflow error. This means it runs endless times.</span>
+            </p>
+            <p class="code-block">
+                <span>void GetLengthRecursion(int[] array, ref int count)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>if(count == array.Length)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>GetLengthRecursion(array, ref count);<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>When you forgot the <code>count++;</code> in the code, you will get this error.</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="io">Input-Output System</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>Input-Output System means, the user interaction. The user can see an output and write something inside. There are different ways</span>
+            </p>
+            <p>
+                <span>You can use WriteLine and Write for an output.</span>
+            </p>
+            <p class="code-block">
+                <span>Console.WriteLine(context) // The context to print out<br></span>
+                <span>Console.Write(context) // The context to print out<br></span>
+            </p>
+            <p>
+                <span>You can use ReadLine and ReadKey for an input.</span>
+            </p>
+            <p class="code-block">
+                <span>string line = Console.ReadLine(); // Reads a line as a string<br></span>
+                <span>char letter = Console.ReadKey(); // Reads a key from the keyboard<br></span>
+            </p>
+        </section>
+        <section>
+            <h2 id="file">File Input-Output System</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>You can read from files and write inside of them. It is important, because you cannot copy everything from a file inside your document.</span>
+            </p>
+            <p>
+                <span>You can read a file with the System.IO using-direction. Then you can use ReadAllLines and ReadAllText to read files. For writing you use WriteAllLine and WriteAllText. <br>The next important thing is the path. It should be relative, when it shared. Because other PC has another names or another operating systems.</span>
+            </p>
+            <p>
+                <span>Here are examples for writing in files.</span>
+            </p>
+            <p class="code-block">
+                <span>using System.IO; // The using-direction<br></span>
+                <span>File.WriteAllLines(path, context); // the context is the new context of the file as string array<br></span>
+                <span>File.WriteAllText(path, context); // Here is the context a string</span>
+            </p>
+            <p>
+                <span>These are the methods for reading from file.</span>
+            </p>
+            <p class="code-block">
+                <span>using System.IO; // The using-direction<br></span>
+                <span>string[] contextAsArray = File.ReadAllLines(path);<br></span>
+                <span>string contextAsString = File.ReadAllText(path);</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="methods">Methods</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>A method is a code block that contains a series of instructions. A program initiates the execution of these instructions by calling the method and providing all necessary method arguments.<br></span>
+                <span>A method creates structure in the project, and it helps to avoid code duplication. It copies the parameters. The parameters are normally call by value.</span>
+            </p>
+            <p class="code-block">
+                <span>returntype MethodeName(Parameter)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>// Code of the methode<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>Here is an example. It prints the argument out. The methode returns void.</span>
+            </p>
+            <p class="code-block">
+                <span>void PrintHeader(string context)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>Console.WriteLine(context);<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>Methods with another return type needs a return. It gives the value back.</span>
+            </p>
+            <p class="code-block">
+                <span>int Addition(int firstValue, int secondValue)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>return firstValue + secondValue;<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>You can choose the data types for the return types.</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="property-field">Properties and fields</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>A property is a public wrapper around a field and not all fields need a property, because they don't need to be public. A property controls the handling the of property.</span>
+            </p>
+            <ul>
+                <li>get
+                    <ul>
+                        <li>Activates when you will read the field value behind the property.</li>
+                        <li>This is the necessary part.</li>
+                    </ul>
+                </li>
+                <li>init
+                    <ul>
+                        <li>Activates when you set the field in the constructor.</li>
+                        <li>Cannot use when set is already in use.</li>
+                    </ul>
+                </li>
+                <li>set
+                    <ul>
+                        <li>Activates when you will set the field value behind property.</li>
+                        <li>Cannot use when init is already in use.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="code-block">
+                <span>class Person<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>private string _name; <br></span>
+                <span><code>&emsp;</code>private int _age;<br></span>
+                <span><code>&emsp;</code>public string Name <br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>get<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>return _name;<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>set<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>if(!string.IsNullOrEmpty(value))<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;&emsp;</code>_name = value;<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>public int Age<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>get<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>return _age;<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>init<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>if(value > 0)<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;&emsp;</code>_age = value;<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><br></span>
+                <span><code>&emsp;</code>public Person(string name, int age)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>Name = name;<br></span>
+                <span><code>&emsp;&emsp;</code>Age = age;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>public bool HasFullAge()<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return Age >= 18;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="callbyreference">Call by reference</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>Call by reference means that, you work with the address of a variable. You can change anything on the original variable. <br>You can use out or ref. The out parameter has to be set.</span>
+            </p>
+            <p>
+                <span>Here is an example with ref</span>
+            </p>
+            <p class="code-block">
+                <span>void GetLengthRecursion(int[] array, ref int count)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>if(count == array.Length)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>GetLengthRecursion(array, ref count);<br></span>
+                <span>}<br></span>
+            </p>
+            <p>
+                <span>You can see the parameter count is call by reference. This is the reason why it isn't always a copy.</span>
+            </p>
+            <p class="code-block">
+                <span>bool TryParse(string context, out int value)<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>value = default!; // set value to default<br></span>
+                <span><code>&emsp;</code>bool found = false;<br></span>
+                <span><code>&emsp;</code>for(int i = 0; i < context.Length & !found; i++)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>found = char.IsDigit(context[i]);<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>if(found)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>value = int.Parse(context);<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>return found;<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>This methode checks if the string is parseable. When it is parseable, the value will be set on the converted number.</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="callbyvalue">Call by value</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>Call by reference means that, you work with copy of the variable. You cannot change the original variable.</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="struct">Structs</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>Structs can be defined to optimize your code. They are call by value. You can define methods inside. The keyword before it says, who can use it.</span>
+            </p>
+            <p class="code-block">
+                <span>struct Person<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>public int Age;<br></span>
+                <span><code>&emsp;</code>public string Name;<br></span>
+                <span><br></span>
+                <span><code>&emsp;</code>public bool HasFullAge()<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;</code><code>&emsp;</code>return Age >= 18;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>You can define it with the name of the struct.</span>
+            </p>
+            <p class="code-block">
+                <span>Person person = new Person();<br></span>
+                <span>person.Age = 10;<br></span>
+                <span>person.Name = "Kevin";</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="records">Records</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>Records are almost the same, but inside them cannot define behaviors.<br>Here is an example.</span>
+            </p>
+            <p class="code-block">
+                <span>record Person(int age, string name);</span>
+            </p>
+            <p>
+                <span>You can define it in the same way as the struct.</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="class">Classes</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>It is almost the same as a struct. But it is call by reference</span>
+            </p>
+            <p class="code-block">
+                <span>class Person<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>public string Name;<br></span>
+                <span><code>&emsp;</code>public int Age;<br></span>
+                <span><br></span>
+                <span><code>&emsp;</code>public bool HasFullAge()<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return Age >= 18;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="interface">Interfaces</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>An interface defines a contract. Any class or struct that implements that contract must provide an implementation of the members defined in the interface. An interface may define a default implementation for members. It may also define static members in order to provide a single implementation for common functionality.</span>
+            </p>
+            <p class="code-block">
+                <span>interface IPerson<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>int Age { get; set; }<br></span>
+                <span><code>&emsp;</code>string Name { get; set; }<br></span>
+                <span><code>&emsp;</code>bool HasFullAge();<br></span>
+                <span>}</span>
+            </p>
+        </section>
+        <section>
+            <h2 id="constructor">Constructors</h2>
+            <h3>Definition</h3>
+            <p>
+                <span>A Constructor is a special methode. It hasn't a return type. It is called when the object creates an instance. You can use it to assign the members.<br>Here is an example.</span>
+            </p>
+            <p class="code-block">
+                <span>class Person<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>public string Name { get; }<br></span>
+                <span><code>&emsp;</code>public int Age { get; }<br></span>
+                <span><br></span>
+                <span><code>&emsp;</code>public Person(string name, int age)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>Name = name;<br></span>
+                <span><code>&emsp;&emsp;</code>Age = age;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>public bool HasFullAge()<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return Age >= 18;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>The constructor assign the parameter to the member.</span>
+            </p>
+        </section>
+
+        <section>
+            <h2 id="keywords">Keywords</h2>
+            <ul>
+                <li>public
+                    <ul>
+                        <li>The public keyword is an access modifier for types and type members. Public access is the most permissive access level.</li>
+                    </ul>
+                </li>
+                <li>private
+                    <ul>
+                        <li>Private access is the least permissive access level. Private members are accessible only within the body of the class or the struct in which they are declared.</li>
+                    </ul>
+                </li>
+                <li>static
+                    <ul>
+                        <li>Use the static modifier to declare a static member, which belongs to the type itself rather than to a specific object. The static modifier can be used to declare static classes.</li>
+                    </ul>
+                </li>
+                <li>protected
+                    <ul>
+                        <li>A protected member is accessible within its class and by derived class instances.</li>
+                    </ul>
+                </li>
+                <li>internal
+                    <ul>
+                        <li>Internal types or members are accessible only within files in the same assembly.</li>
+                    </ul>
+                </li>
+                <li>file
+                    <ul>
+                        <li>The file modifier restricts a top-level type's scope and visibility to the file in which it's declared.</li>
+                    </ul>
+                </li>
+                <li>abstract
+                    <ul>
+                        <li>The abstract modifier indicates that the thing being modified has a missing or incomplete implementation.</li>
+                    </ul>
+                </li>
+                <li>while
+                    <ul>
+                        <li>While is the keyword for two loops.</li>
+                    </ul>
+                </li>
+                <li>do
+                    <ul>
+                        <li>Do is a keyword for a loop.</li>
+                    </ul>
+                </li>
+                <li>out
+                    <ul>
+                        <li>Out is a keyword to say, the parameter is a reference.</li>
+                        <li>It is also a generic checker if a interface or a class is the generic type.</li>
+                    </ul>
+                </li>
+                <li>ref
+                    <ul>
+                        <li>A reference keyword.</li>
+                    </ul>
+                </li>
+                <li>if
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>else
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>override
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>const
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>readonly
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>required
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>namespace
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>interface
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>class
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
         </section>
     </article>
 </body>

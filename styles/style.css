@@ -1,6 +1,6 @@
 :root {
     --menu-background: #A789E0;
-    --duration: 0.7s;
+    --duration: 0.5s;
     --border-radius: 5px;
 }
 
@@ -23,7 +23,7 @@ body {
     z-index: 2;
     display: flex;
     position: fixed;
-    flex-direction: column;
+    overflow: auto;
     top: 0;
     left: 0;
     bottom: 0;
@@ -109,12 +109,15 @@ header h1 {
     padding-top: 2rem;
     list-style: none;
     position: absolute;
-    overflow-x: hidden;
-    overflow-y: scroll;
     top: 7%;
     left: 0;
     width: 80%;
     text-align: center;
+}
+
+.sidebar ul:hover {
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .sidebar ul li {
@@ -196,4 +199,12 @@ section table tr th:hover, section table tr td:hover {
 .tables {
     display: flex;
     gap: 1rem;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    color: white;
 }
