@@ -988,10 +988,38 @@
             <h2 id="staticOperators">Static operators</h2>
             <h3>Definition</h3>
             <p>
-                <span>A static method to add two parameter. The parameters are the addends of the operation</span>
+                <span>A static method to operate two parameter. The parameters are the addends of the operation</span>
             </p>
             <p class="code-block">
+                <span>class Number<br></span>
+                <span>{<br></span>
                 <span></span>
+                <span><code>&emsp;</code>public int Value { get; set; }<br></span>
+                <span><code>&emsp;</code>public static Number operator +(Number a, Number b)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return new() { Value = a.Value + b.Value };<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>You can also create an operator for implication and explication of the class. They only have one parameter.</span>
+            </p>
+            <p class="code-block">
+                <span>class Number<br></span>
+                <span>{<br></span>
+                <span></span>
+                <span><code>&emsp;</code>public int Value { get; set; }<br></span>
+                <span><code>&emsp;</code>public static implicit operator Number(int a)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return new() { Value = a };<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>You can use it like this:</span>
+            </p>
+            <p class="code-block">
+                <span>Number number = 3;</span>
             </p>
         </section>
         <section>
@@ -1000,12 +1028,55 @@
             <p>
                 <span>In C#, an enumeration, or enum, is a distinct value type that defines a set of named constant integral values. Enums provide a way to create named integral constants that can be used as symbolic names for integer values. This makes the code more readable and less error-prone.</span>
             </p>
+            <p class="code-block">
+                <span>public enum Numbers<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>Zero,<br></span>
+                <span><code>&emsp;</code>One,<br></span>
+                <span><code>&emsp;</code>Three = 3,<br></span>
+                <span><code>&emsp;</code>Ten = 10<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>Inside the enumeration are numbers. You can use them like this.</span>
+            </p>
+            <p class="code-block">
+                <span>Console.WriteLine(Numbers.Three - 1); // Output: 2</span>
+            </p>
         </section>
         <section>
             <h2 id="Indexer">Indexer</h2>
             <h3>Definition</h3>
             <p>
                 <span>In C#, an indexer is a special type of property that allows instances of a class or struct to be indexed in a way similar to arrays. It enables objects to be treated like arrays by providing an easy and convenient way to access elements within the object.</span>
+            </p>
+            <p class="code-block">
+                <span>class Numbers<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>private int[] _numbers;<br></span>
+                <span><code>&emsp;</code>public Numbers(params int[] numbers)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>_numbers = numbers;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span></span>
+                <span><code>&emsp;</code>public int this[int index]<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>get<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>return _numbers[index];<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>set<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>_numbers[index] = value;<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>In the class numbers is a indexer. The indexer sets values and you can get values. You can use it like this.</span>
+            </p>
+            <p class="code-block">
+                <span>Console.WriteLine(numbers[5]);</span>
             </p>
         </section>
         <section>
@@ -1014,12 +1085,92 @@
             <p>
                 <span>Generic types in C# allow you to create classes, interfaces, methods, and other constructs with placeholders for the types they work with. These placeholders, known as type parameters, allow you to design components that are reusable and provide strong typing at compile time.</span>
             </p>
+            <p class="code-block">
+                <span>class ArrayNode<T><br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>private T[] _array;<br></span>
+                <span></span>
+                <span><code>&emsp;</code>public ArrayNode(T[] array)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>_array = array;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span></span>
+                <span><code>&emsp;</code>public T this[int index]<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>get<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>return _array[index];<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>set<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>_array[index] = value;<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>You can use it like this</span>
+            </p>
+            <p class="code-block">
+                <span>ArrayNode<code>&lt;string&gt;</code> node = new("one", "two", "three");<br></span>
+                <span>Console.WriteLine(node[0]); // Output: one</span>
+            </p>
         </section>
         <section>
             <h2 id="default">Default parameter</h2>
             <h3>Definition</h3>
             <p>
                 <span>In C#, the default value of a type is the value that is automatically assigned to a variable if no explicit value is provided.</span>
+            </p>
+            <p class="code-block">
+                <span>class Person<br></span>
+                <span>{<br></span>
+                <span><code>&emsp;</code>private string _name;<br></span>
+                <span><code>&emsp;</code>private int _age;<br></span>
+                <span><code>&emsp;</code>public string Name<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>get<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>return _name;<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>set<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>if (!string.IsNullOrEmpty(value))<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;&emsp;</code>_name = value;<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>public int Age<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>get<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>return _age;<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>init<br></span>
+                <span><code>&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>if (value > 0)<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;&emsp;&emsp;</code>_age = value;<br></span>
+                <span><code>&emsp;&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>public Person(string name = "", int age = 0)<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>Name = name;<br></span>
+                <span><code>&emsp;&emsp;</code>Age = age;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span><code>&emsp;</code>public bool HasFullAge()<br></span>
+                <span><code>&emsp;</code>{<br></span>
+                <span><code>&emsp;&emsp;</code>return Age >= 18;<br></span>
+                <span><code>&emsp;</code>}<br></span>
+                <span>}</span>
+            </p>
+            <p>
+                <span>When you initialize a instance without any parameter the parameter are set on a empty string as name and 0 as age</span>
+            </p>
+            <p class="code-block">
+                <span>Person person1 = new Person(); // Name is empty and age is 0</span>
             </p>
         </section>
     </article>
