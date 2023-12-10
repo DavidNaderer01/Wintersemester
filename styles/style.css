@@ -28,6 +28,7 @@ body {
     z-index: 2;
     display: flex;
     position: fixed;
+    flex-direction: column;
     overflow: auto;
     bottom: 0;
     width: 20%;
@@ -56,7 +57,7 @@ input:checked ~ header {
     left: 4%;
 }
 
-input:checked ~ .sidebar ul {
+input:checked ~ .sidebar div {
     display: none;
 }
 
@@ -100,39 +101,41 @@ header h1 {
     margin-top: 2rem;
 }
 
-.sidebar ul::before, .sidebar ul::after {
+.sidebar div::before, .sidebar div::after {
     content: '';
     display: flex;
     border-bottom: 3px black dashed;
+    z-index: 5;
+    margin-left: 4rem;
 }
 
-.sidebar ul {
+.sidebar div ul {
     padding-top: 2rem;
     list-style: none;
-    position: absolute;
     top: 7%;
     left: 0;
     width: 80%;
     text-align: center;
 }
 
-.sidebar ul:hover {
+.sidebar div ul {
+    margin-left: 2rem;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
-.sidebar ul li {
+.sidebar div:first-child ul li {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-.sidebar ul li:hover {
+.sidebar div ul li:hover {
     background-color: #6B617A;
     cursor: pointer;
     border-radius: var(--border-radius);
 }
 
-.sidebar ul li a {
+.sidebar div ul li a {
     color: white;
     display: inline-block;
     padding-block: 15%;
@@ -140,6 +143,11 @@ header h1 {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     font-size: 1.2rem;
+}
+
+.sidebar div {
+    width: 70%;
+    justify-content: center;
 }
 
 section {
@@ -211,4 +219,8 @@ section table tr th:hover, section table tr td:hover {
 
 ::-webkit-scrollbar-thumb {
     color: white;
+}
+
+.sidebar div:first-child  {
+    padding-top: 2rem;
 }
