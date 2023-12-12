@@ -1,29 +1,82 @@
+@import "style.css";
+
+* {
+    color: black;
+}
+
 header {
     display: flex;
     width: 100vw;
     left: 0;
 }
 
-header div:first-child label {
+header div label {
     font-size: 4rem;
+    width: 100%;
+    height: 100%;
 }
 
-header div:first-child label:hover {
+header div label a span {
+    font-size: 100px;
+}
+
+header div label {
+    width: 20%;
+    height: 10%;
+    padding: 0 0 0 1rem;
+}
+
+header div {
+    height: calc(100% + 2rem);
+    display: flex;
+    align-items: center;
+    width: 20%;
+    top: 0;
+    left: 0;
+}
+
+body > div {
+    display: flex;
+    position: fixed;
+    width: 60%;
+    height: calc(90% - 10rem);
+    top: calc(10% + 4rem);
+    left: 2rem;
+    box-shadow: rgba(159, 159, 159, 0.35) 0 0.1rem 15px;
+    border-radius: var(--border-radius);
+}
+
+tbody tr {
+    display: flex;
+    border-bottom: 2px black solid;
+    margin-left: 2rem;
+    width: 15rem;
+    padding: 1rem;
+}
+
+tbody tr:hover {
+    background-color: #C8CDF7;
     cursor: pointer;
 }
 
-header div:last-child h1 {
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
+tbody tr:first-child {
+    border-top: 2px black solid;
 }
 
-header div:last-child {
-    width: 100vw;
+tbody {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 40%;
 }
 
-header div:first-child {
-    height: 100%;
-    display: flex;
-    align-items: center;
+tbody tr td * {
+    font-size: 1.1rem;
+}
+
+img {
+    margin-left: 14rem;
+    margin-top: 3rem;
+    border-radius: 50%;
+    float: right;
 }

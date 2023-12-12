@@ -106,6 +106,7 @@ header h1 {
     display: flex;
     border-bottom: 3px black dashed;
     z-index: 5;
+    width: 100%;
     margin-left: 4rem;
 }
 
@@ -161,7 +162,7 @@ section {
     transition: width var(--duration);
 }
 
-section p span a:hover {
+span a:hover {
     color: #6B617A;
     cursor: grabbing;
 }
